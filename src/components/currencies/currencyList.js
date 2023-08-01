@@ -20,13 +20,14 @@ function CurrencyList() {
     return <p className="status">{currencyData.isError}</p>;
   }
   return (
-    <ul>
-      {Object.entries(currencyData.currenciesData).map((el) => (
-        <li key={el[0]}>
-          <CurrencyCard curCode={el[0]} curName={el[1]} />
-        </li>
-      ))}
-    </ul>
+    <section className="currencies">
+      <h1 className="title">Stats by currency</h1>
+      <ul className="countryList">
+        {Object.entries(currencyData.currenciesData).map((el) => {
+          return <CurrencyCard key={el[0]} curCode={el[0]} curName={el[1]} />;
+        })}
+      </ul>
+    </section>
   );
 }
 

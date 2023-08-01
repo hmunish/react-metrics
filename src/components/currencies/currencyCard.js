@@ -10,13 +10,17 @@ function CurrencyCard({ curName, curCode }) {
     dispatch(setCountryCode(code));
   }
   return (
-    <NavLink
-      to="/details"
-      onClick={(e) => handleCurrencyClick(e)}
-      data-code={curCode}
-    >
-      {curName}
-    </NavLink>
+    <li>
+      <NavLink
+        to="/details"
+        onClick={(e) => handleCurrencyClick(e)}
+        data-code={curCode}
+      >
+        Name: {curName}
+        <br></br>
+        Code: {curCode}
+      </NavLink>
+    </li>
   );
 }
 

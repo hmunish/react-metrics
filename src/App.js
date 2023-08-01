@@ -1,3 +1,4 @@
+import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import CurrencyList from './components/currencies/currencyList';
 import CurrencyDetails from './components/currencies/currencyDetails';

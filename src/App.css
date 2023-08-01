@@ -1,39 +1,61 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.countryList {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fb5193;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.countryList > li {
+  height: 100px;
+  flex-basis: 50%;
+  height: 150px;
+  background-image: url("../src/components/currencies/money.png");
+  background-size: 250px;
+  background-repeat: no-repeat;
+  background-position: 50px -80px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.countryList > li:nth-child(even) {
+  background-color: #b13967;
+}
+.countryList > li:nth-child(odd) {
+  background-color: #fb5193;
+}
+
+.countryList > li > a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  text-align: right;
+  text-transform: uppercase;
+  padding: 15px;
+  font-weight: 1000;
+  font-size: 1.3rem;
+  color: #ffffff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+section.currencies {
+  width: 100%;
+  background-color: #fb5193;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  gap: 15px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  padding: 5px;
+  color: #ffffff;
 }
