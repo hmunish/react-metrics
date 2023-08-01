@@ -21,6 +21,10 @@ function CurrencyList() {
   }
   return (
     <section className="currencies">
+      <div className="overview">
+        <div></div>
+        <h3>World currencies</h3>
+      </div>
       <h1 className="title">Stats by currency</h1>
       <ul className="countryList">
         {Object.entries(currencyData.currenciesData).map((el) => {
