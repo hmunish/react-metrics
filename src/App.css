@@ -40,7 +40,7 @@ nav > ul {
 }
 
 #mic {
-  background-image: url(../src/components/mic.png);
+  background-image: url(../src/components/mic.ico);
 }
 
 #settings {
@@ -113,6 +113,15 @@ nav > ul {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  position: relative;
+}
+
+.rightIcon {
+  position: absolute;
+  border: 3px solid;
+  border-radius: 100%;
+  padding: 3px;
+  top: 5px;
 }
 
 section.currencies {

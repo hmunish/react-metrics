@@ -9,6 +9,11 @@ function CurrencyDetails() {
     dispatch(fetchCurrencyData(currencyDetails.curCountryCode));
   }, [dispatch, currencyDetails.curCountryCode]);
 
+  if (currencyDetails.isLoading) return <p className="status">Loading...</p>;
+  if (currencyDetails.isError) {
+    return <p className="status">{currencyDetails.isError}</p>;
+  }
+
   const arr = Object.entries(
     currencyDetails.currenciesData[currencyDetails.curCountryCode],
   ).slice(3, 11);

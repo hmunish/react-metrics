@@ -23,11 +23,13 @@ function CurrencyList() {
     <section className="currencies">
       <div className="overview">
         <div />
-        <h3>World currencies</h3>
+        <h3>World currencies names</h3>
       </div>
       <h1 className="title">Stats by currency</h1>
       <ul className="countryList">
-        {arr.map((el) => <CurrencyCard key={el[0]} curCode={el[0]} curName={el[1]} />)}
+        {arr.map((el) => (
+          <CurrencyCard key={el[0]} curCode={el[0]} curName={el[1]} />
+        ))}
       </ul>
     </section>
   );

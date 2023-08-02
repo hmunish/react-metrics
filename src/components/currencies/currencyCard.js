@@ -16,6 +16,7 @@ function CurrencyCard({ curName, curCode }) {
         onClick={(e) => handleCurrencyClick(e)}
         data-code={curCode}
       >
+        <p className="rightIcon">&rarr;</p>
         Name:
         {' '}
         {curName}
