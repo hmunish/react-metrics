@@ -1,7 +1,7 @@
-/*eslint-disable */
-import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { setCountryCode } from "../../redux/currency/currencySlice";
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { setCountryCode } from '../../redux/currency/currencySlice';
 
 function CurrencyCard({ curName, curCode }) {
   const dispatch = useDispatch();
@@ -16,12 +16,26 @@ function CurrencyCard({ curName, curCode }) {
         onClick={(e) => handleCurrencyClick(e)}
         data-code={curCode}
       >
-        Name: {curName}
-        <br></br>
-        Code: {curCode}
+        Name:
+        {' '}
+        {curName}
+        <br />
+        Code:
+        {' '}
+        {curCode}
       </NavLink>
     </li>
   );
 }
+
+CurrencyCard.defaultProps = {
+  curName: '',
+  curCode: '',
+};
+
+CurrencyCard.propTypes = {
+  curName: PropTypes.string,
+  curCode: PropTypes.string,
+};
 
 export default CurrencyCard;

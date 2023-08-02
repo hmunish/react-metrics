@@ -1,16 +1,17 @@
-/*eslint-disable */
-import { NavLink } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
+  const currencySlice = useSelector((state) => state.currency);
   return (
     <nav>
       <NavLink to="/">
-        <li id="back"></li>
+        <li id="back" />
       </NavLink>
-      <p>All currencies</p>
+      <p>{currencySlice.curCountryCode || 'All country currencies'}</p>
       <ul>
-        <li id="mic"></li>
-        <li id="settings"></li>
+        <li id="mic" />
+        <li id="settings" />
       </ul>
     </nav>
   );

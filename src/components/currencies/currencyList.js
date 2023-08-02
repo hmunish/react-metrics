@@ -1,11 +1,10 @@
-/*eslint-disable */
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   clearCountryCode,
   fetchAllCurrencies,
-} from "../../redux/currency/currencySlice";
-import CurrencyCard from "./currencyCard";
+} from '../../redux/currency/currencySlice';
+import CurrencyCard from './currencyCard';
 
 function CurrencyList() {
   const currencyData = useSelector((state) => state.currency);
@@ -19,17 +18,16 @@ function CurrencyList() {
   if (currencyData.isError) {
     return <p className="status">{currencyData.isError}</p>;
   }
+  const arr = Object.entries(currencyData.currenciesData).slice(3, 11);
   return (
     <section className="currencies">
       <div className="overview">
-        <div></div>
+        <div />
         <h3>World currencies</h3>
       </div>
       <h1 className="title">Stats by currency</h1>
       <ul className="countryList">
-        {Object.entries(currencyData.currenciesData).map((el) => {
-          return <CurrencyCard key={el[0]} curCode={el[0]} curName={el[1]} />;
-        })}
+        {arr.map((el) => <CurrencyCard key={el[0]} curCode={el[0]} curName={el[1]} />)}
       </ul>
     </section>
   );
