@@ -25,9 +25,8 @@ function CurrencyList() {
   }
   const arr = Object.entries(currencyData.currenciesData).slice(0, 8);
 
-  if (currencyData.curCountryCode !== "") {
+  if (currencyData.curCountryCode !== "")
     return <p className="status">Loading...</p>;
-  }
 
   return (
     <section className="currencies">
