@@ -4,6 +4,7 @@ const API_URL = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/c
 
 const initialState = {
   currenciesData: [],
+  currenciesDataCopy: [],
   curCountryCode: '',
   isLoading: false,
   isError: false,
@@ -41,6 +42,14 @@ export const currencySlice = createSlice({
   name: 'currencySlice',
   initialState,
   reducers: {
+    handleSearch: (state, query) => {
+      const tmp = Object.entries(state.currenciesDataCopy).filter((el) => {
+        const q = query.payload;
+        console.log(q);
+        return el[1].includes(q);
+      });
+      state.currenciesData = Object.fromEntries(tmp);
+    },
     clearCountryCode: (state) => {
       state.curCountryCode = '';
     },
@@ -53,6 +62,7 @@ export const currencySlice = createSlice({
       state.isLoading = false;
       state.isError = false;
       state.currenciesData = action.payload;
+      state.currenciesDataCopy = action.payload;
     });
     builder.addCase(fetchAllCurrencies.pending, (state) => {
       state.isLoading = true;
@@ -76,5 +86,5 @@ export const currencySlice = createSlice({
   },
 });
 
-export const { clearCountryCode, setCountryCode } = currencySlice.actions;
+export const { clearCountryCode, setCountryCode, handleSearch } = currencySlice.actions;
 export default currencySlice.reducer;
