@@ -1,18 +1,18 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { render } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
-import configureStore from "redux-mock-store";
-import Navbar from "../components/navbar";
-import { Provider } from "react-redux";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
+import Navbar from '../components/navbar';
 
 const mockStore = configureStore([]);
 
-describe("testing navbar component", () => {
-  it("Navbar should render in the document", () => {
+describe('testing navbar component', () => {
+  it('Navbar should render in the document', () => {
     const mockCurrencies = {
       currenciesData: [],
-      curCountryCode: "",
+      curCountryCode: '',
       isLoading: false,
       isError: false,
     };
@@ -26,16 +26,16 @@ describe("testing navbar component", () => {
         <BrowserRouter>
           <Navbar />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
-    const bar = getByTestId("nav-test");
+    const bar = getByTestId('nav-test'); // eslint-disable-next-line no-unused-expressions
     expect(bar).toBeInTheDocument;
   });
 
-  it("should render correct snapshot", () => {
+  it('should render correct snapshot', () => {
     const mockCurrencies = {
       currenciesData: [],
-      curCountryCode: "",
+      curCountryCode: '',
       isLoading: false,
       isError: false,
     };
@@ -50,7 +50,7 @@ describe("testing navbar component", () => {
           <BrowserRouter>
             <Navbar />
           </BrowserRouter>
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

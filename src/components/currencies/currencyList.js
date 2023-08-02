@@ -1,10 +1,10 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   clearCountryCode,
   fetchAllCurrencies,
-} from "../../redux/currency/currencySlice";
-import CurrencyCard from "./currencyCard";
+} from '../../redux/currency/currencySlice';
+import CurrencyCard from './currencyCard';
 
 function CurrencyList() {
   const currencyData = useSelector((state) => state.currency);

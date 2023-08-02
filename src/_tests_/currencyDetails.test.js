@@ -1,16 +1,16 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import configureStore from "redux-mock-store";
-import { Provider } from "react-redux";
-import CurrencyDetails from "../components/currencies/currencyList";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
+import CurrencyDetails from '../components/currencies/currencyList';
 
 const mockStore = configureStore([]);
 
-describe("test currency details component", () => {
-  it("should render correct snapshot", () => {
+describe('test currency details component', () => {
+  it('should render correct snapshot', () => {
     const mockCurrencies = {
       currenciesData: [],
-      curCountryCode: "",
+      curCountryCode: '',
       isLoading: false,
       isError: false,
     };
@@ -23,7 +23,7 @@ describe("test currency details component", () => {
       .create(
         <Provider store={store}>
           <CurrencyDetails />
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

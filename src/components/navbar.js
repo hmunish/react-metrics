@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   const currencySlice = useSelector((state) => state.currency);
@@ -8,7 +8,7 @@ function Navbar() {
       <NavLink to="/">
         <li id="back" />
       </NavLink>
-      <p>{currencySlice.curCountryCode || "All country currencies"}</p>
+      <p>{currencySlice.curCountryCode || 'All country currencies'}</p>
       <ul>
         <li id="mic" />
         <li id="settings" />

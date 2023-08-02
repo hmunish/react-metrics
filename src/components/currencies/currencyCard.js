@@ -7,6 +7,7 @@ function CurrencyCard({ curName, curCode }) {
   const dispatch = useDispatch();
   function handleCurrencyClick(e) {
     const { code } = e.target.dataset;
+    console.log(e.target, code);
     dispatch(setCountryCode(code));
   }
   return (
@@ -16,7 +17,9 @@ function CurrencyCard({ curName, curCode }) {
         onClick={(e) => handleCurrencyClick(e)}
         data-code={curCode}
       >
-        <p className="rightIcon">&rarr;</p>
+        <p className="rightIcon" data-code={curCode}>
+          &rarr;
+        </p>
         Name:
         {' '}
         {curName}
