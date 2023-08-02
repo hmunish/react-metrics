@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   clearCountryCode,
   fetchAllCurrencies,
-} from '../../redux/currency/currencySlice';
-import CurrencyCard from './currencyCard';
+  handleSearch,
+} from "../../redux/currency/currencySlice";
+import CurrencyCard from "./currencyCard";
 
 function CurrencyList() {
   const currencyData = useSelector((state) => state.currency);
@@ -22,9 +23,20 @@ function CurrencyList() {
       </p>
     );
   }
-  const arr = Object.entries(currencyData.currenciesData).slice(3, 11);
+  const arr = Object.entries(currencyData.currenciesData).slice(0, 8);
+
+  if (currencyData.curCountryCode !== "") {
+    return <p className="status">Loading...</p>;
+  }
+
   return (
     <section className="currencies">
+      <input
+        id="search-bar"
+        className="hidden"
+        placeholder="Search"
+        onKeyUp={(e) => dispatch(handleSearch(e.target.value))}
+      />
       <div className="overview">
         <div />
         <h3>World currencies names</h3>
