@@ -1,17 +1,19 @@
+/*eslint-disable */
 import { NavLink } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav>
-      <NavLink to="/">&#91;</NavLink>
+      <NavLink to="/">
+        <li id="back"></li>
+      </NavLink>
       <p>All currencies</p>
       <ul>
-        <li>
-          <img></img>
-        </li>
-        <li>
-          <img></img>
-        </li>
+        <li id="mic"></li>
+        <li id="settings"></li>
       </ul>
     </nav>
   );
 }
+
+export default Navbar;
