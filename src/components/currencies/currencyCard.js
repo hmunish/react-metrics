@@ -7,7 +7,6 @@ function CurrencyCard({ curName, curCode }) {
   const dispatch = useDispatch();
   function handleCurrencyClick(e) {
     const { code } = e.target.dataset;
-    console.log(e.target, code);
     dispatch(setCountryCode(code));
   }
   return (
