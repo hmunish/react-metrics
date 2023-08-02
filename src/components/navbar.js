@@ -1,11 +1,11 @@
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   const currencySlice = useSelector((state) => state.currency);
   function handleSearchClick() {
-    const searchBar = document.querySelector("#search-bar");
-    searchBar.classList.toggle("hidden");
+    const searchBar = document.querySelector('#search-bar');
+    searchBar.classList.toggle('hidden');
     searchBar.focus();
   }
   return (
@@ -14,11 +14,11 @@ function Navbar() {
       <NavLink to="/">
         <li id="back" />
       </NavLink>
-      <p>{currencySlice.curCountryCode || "All country currencies"}</p>
+      <p>{currencySlice.curCountryCode || 'All country currencies'}</p>
       <ul>
         <li id="mic" />
         <li
-          id={currencySlice.curCountryCode ? "settings" : "search"}
+          id={currencySlice.curCountryCode ? 'settings' : 'search'}
           onClick={
             currencySlice.curCountryCode ? () => {} : () => handleSearchClick()
           }
