@@ -1,39 +1,155 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ec4c8a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav li {
+  width: 25px;
+  height: 25px;
+  list-style: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav > p {
+  color: #fff;
+}
+
+nav > ul {
+  display: flex;
+  width: 75px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#back {
+  background-image: url(../src/components/back.png);
+}
+
+#mic {
+  background-image: url(../src/components/mic.ico);
+}
+
+#settings {
+  background-image: url(../src/components/settings.png);
+}
+
+.countryList {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fb5193;
+}
+
+.overview {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  background-color: #fb5193;
+}
+
+.overview > div {
+  height: 100%;
+  background-image: url(../src/components/currencies/money.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.overview > * {
+  flex-basis: 50%;
+}
+
+.overview > h3 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.currencyDetails {
+  width: 100%;
+}
+
+.currencyDetails > li {
+  text-transform: uppercase;
+  padding: 25px;
+  background-color: #b13967;
+  color: #fff;
+}
+
+.countryList > li {
+  flex-basis: 50%;
+  height: 150px;
+  background-image: url("../src/components/currencies/money.png");
+  background-size: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #b13967;
+}
+
+.countryList > li:nth-child(1),
+.countryList > li:nth-child(4),
+.countryList > li:nth-child(5),
+.countryList > li:nth-child(8) {
+  background-color: #fb5193;
+}
+
+.currencyDetails > li:nth-child(even) {
+  background-color: #fb5193;
+}
+
+.countryList > li > a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  text-transform: uppercase;
+  padding: 15px;
+  font-weight: 1000;
+  font-size: 1.3rem;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.rightIcon {
+  position: absolute;
+  border: 3px solid;
+  border-radius: 100%;
+  padding: 3px;
+  top: 5px;
+}
+
+section.currencies {
+  width: 100%;
+  background-color: #d24379;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  padding: 5px;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+section.details {
+  background-color: #d24379;
 }

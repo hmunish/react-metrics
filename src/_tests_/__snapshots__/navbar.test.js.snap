@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing navbar component should render correct snapshot 1`] = `
+<nav
+  data-testid="nav-test"
+>
+  <a
+    aria-current="page"
+    className="active"
+    href="/"
+    onClick={[Function]}
+  >
+    <li
+      id="back"
+    />
+  </a>
+  <p>
+    All country currencies
+  </p>
+  <ul>
+    <li
+      id="mic"
+    />
+    <li
+      id="settings"
+    />
+  </ul>
+</nav>
+`;

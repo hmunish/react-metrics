@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test currency details component should render correct snapshot 1`] = `
+<section
+  className="currencies"
+>
+  <div
+    className="overview"
+  >
+    <div />
+    <h3>
+      World currencies names
+    </h3>
+  </div>
+  <h1
+    className="title"
+  >
+    Stats by currency
+  </h1>
+  <ul
+    className="countryList"
+  />
+</section>
+`;
