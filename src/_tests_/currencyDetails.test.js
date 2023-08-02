@@ -2,11 +2,11 @@ import React from "react";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import CurrencyList from "../components/currencies/currencyList";
+import CurrencyDetails from "../components/currencies/currencyList";
 
 const mockStore = configureStore([]);
 
-describe("test currency list component", () => {
+describe("test currency details component", () => {
   it("should render correct snapshot", () => {
     const mockCurrencies = {
       currenciesData: [],
@@ -22,7 +22,7 @@ describe("test currency list component", () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <CurrencyList />
+          <CurrencyDetails />
         </Provider>
       )
       .toJSON();
