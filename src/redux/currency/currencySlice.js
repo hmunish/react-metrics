@@ -16,7 +16,6 @@ export const fetchAllCurrencies = createAsyncThunk(
       const res = await fetch(`${API_URL}.json`);
       if (!res.ok) throw new Error('Error fetching currencies data');
       const data = await res.json();
-      console.log(data);
       return data;
     } catch (err) {
       return thunkAPI.rejectWithValue('Something went wrong');
@@ -31,7 +30,6 @@ export const fetchCurrencyData = createAsyncThunk(
       const res = await fetch(`${API_URL}/${curCode}.json`);
       if (!res.ok) throw new Error('Error fetching currency data');
       const data = await res.json();
-      console.log(data);
       return data;
     } catch (err) {
       return thunkAPI.rejectWithValue('Something went wrong');
@@ -47,7 +45,6 @@ export const currencySlice = createSlice({
       state.curCountryCode = '';
     },
     setCountryCode: (state, param) => {
-      console.log(param);
       state.curCountryCode = param.payload;
     },
   },
