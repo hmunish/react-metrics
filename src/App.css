@@ -66,7 +66,7 @@ nav > ul {
 .overview > div {
   height: 100%;
   background-image: url(../src/components/currencies/money.png);
-  background-size: 150px;
+  background-size: 100px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -95,9 +95,9 @@ nav > ul {
   flex-basis: 50%;
   height: 150px;
   background-image: url("../src/components/currencies/money.png");
-  background-size: 250px;
+  background-size: 75px;
   background-repeat: no-repeat;
-  background-position: 50px -80px;
+  background-position: center;
   background-color: #b13967;
 }
 
