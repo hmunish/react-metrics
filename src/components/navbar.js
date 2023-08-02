@@ -11,9 +11,13 @@ function Navbar() {
   return (
     <nav data-testid="nav-test">
       <li id="menu" />
-      <NavLink to="/">
-        <li id="back" />
-      </NavLink>
+      {currencySlice.curCountryCode ? (
+        <NavLink to="/">
+          <li id="back" />
+        </NavLink>
+      ) : (
+        ''
+      )}
       <p>{currencySlice.curCountryCode || 'All country currencies'}</p>
       <ul>
         <li id="mic" />
